@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<style>
+    form{
+        max-width: 300px;
+        float: left;
+
+    }
+    input{
+        outline: none !important;
+        margin-bottom: 20px;
+        padding: 5px;
+        width:90%;
+        border: 0;
+        border-bottom: 1px solid black;
+        box-shadow: none;
+    }
+    button{
+        border:1px solid black;
+        background-color: transparent;
+        padding: 5px;
+    }
+    button:hover{
+        background-color: black;
+        color: #fff;
+    }
+    div#result{
+    float: left;
+    max-width: 500px;
+    }
+</style>
+<!-- __________________________________________ -->
+
+<form id="signUpForm">
+    <input id="email" placeholder="Email" type="email">
+    <input id="firstname" placeholder="Firstname" type="text">
+    <input id="lastname" placeholder="Lastname" type="text">
+    <input id="imageUrl" placeholder="Image Url" type="text">
+    <input id="password" placeholder="Password" type="password">
+    <button>Sign Up</button>
+</form>
+<div id="result">
+    No result :C
+</div>
+
+<!-- __________________________________________ -->
+<script src="script.js"></script>
+</body>
+</html>
