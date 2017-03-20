@@ -6,8 +6,15 @@ var config = {
 $('#signUpForm').submit(function(event){
 	event.preventDefault();
 	var userObject = createObject(this);
-	createUser(userObject);
+	sendData(userObject, config.createUser);
 });
+
+$('#signInForm').submit(function(event){
+	event.preventDefault();
+	var userObject = createObject(this);
+	sendData(userObject, config.loginUser);
+});
+
 
 function createObject(form){
 	var userModel = {};
@@ -18,9 +25,10 @@ function createObject(form){
 	return userModel;
 }
 
-function createUser(user){
+
+function sendData(user, route){
 	$.ajax({
-	    url: config.origin + config.createUser,
+	    url: config.origin + route,
 	    type: "POST",
 	    data: user,
 	    success: function(response){
