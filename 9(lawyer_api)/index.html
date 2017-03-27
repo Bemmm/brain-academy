@@ -6,16 +6,51 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
+<style>
+    .column33{
+        max-width: 33%;
+        min-width: 33%;
+        float: left;
+        min-height: 1px;
+    }
+    #categories ul,
+    #lawyers ul{
+        margin: 0;
+        padding: 0;
+    }
+    #lawyers ul li img{
+        width:30px;
+    }
+    #categories ul li,
+    #lawyers ul li{
+        margin-bottom: 3px;
+        list-style-type: none;
+        font-size:12px;
+        border-bottom: 1px solid #d9d9d9;
+    }
+    #orders div{
+        border-bottom: 1px solid black;
+        margin-bottom: 10px;
+    }
+</style>
 <!-- __________________________________________ -->
-<form id="loginForm">
+<div class="column33" id="categories">
+    <ul></ul>
+</div>
+<div class="column33" id="orders">
+
+</div>
+<div class="column33" id="lawyers">
+    <ul></ul>
+</div>
+<!-- <form id="loginForm">
     <input id="email" type="email" placeholder="Введіть ваш Email">
     <input id="password" type="password" placeholder="Ваш пароль">
     <button>Увійти</button>
-</form>
+</form> -->
 
-<hr>
 
-<form id="signUpForm">
+<!-- <form id="signUpForm">
     <input id="email" type="email" placeholder="Введіть ваш Email">
     <input id="password" type="password" placeholder="Ваш пароль">
     <input type="radio" name="role" value="User" checked >Користувач
@@ -24,7 +59,7 @@
     <input id="secondname" type="text" placeholder="Прізвище">
     <input id="terms" type="checkbox">Погоджуєтесь?
     <button>Створити</button>
-</form>
+</form> -->
 
 <!-- __________________________________________ -->
 <script src="script.js"></script>

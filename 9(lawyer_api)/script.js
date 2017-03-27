@@ -3,11 +3,18 @@ var config = {
 	origin: 'http://31.131.22.106',
 	prefix: '/api',
 	login: '/login',
-	person: '/person'
+	person: '/person',
+	parentCategories: '/parent-categories',
+	lawyers: '/person/idnull',
+	orders: '/order/page='
 };
 $(document).ready(function(){
-
+	currentPage = 1;
+	sendRequest(config.origin+config.prefix+config.parentCategories, 'GET');
+	sendRequest(config.origin+config.prefix+config.lawyers, 'GET');
+	sendRequest(config.origin+config.prefix+config.orders + currentPage, 'GET');
 });
+
 $('#loginForm').submit(function(event){
 	event.preventDefault();
 	var loginUrl = config.origin + config.prefix + config.login;
@@ -31,14 +38,45 @@ $('#signUpForm').submit(function(event){
 
 });
 
+function outputCategories(categories){
+	var list = $('#categories ul');
+	for(i=0;i<categories.length; i++){
+		list.append('<li>'+ categories[i].name +'</li>')
+	}
+};
 
-function sendRequest(url, model){
+function outputLawyers(lawyers){
+	var list = $('#lawyers ul');
+	for(i=0;i<lawyers.length; i++){
+		list.append('<li> <img src="' + config.origin + lawyers[i].photo + '">'+ lawyers[i].name.firstName +'</li>')
+	}
+};
+function outputOrders(orders){
+	var colors = ['red', 'blue', 'green'];
+	var list = $('#orders');
+	for(i=0;i<orders.length; i++){
+		var rand = colors[Math.floor(Math.random() * colors.length)];
+		list.append('<div style="background:' + rand +'"><h1>' + orders[i].categoryName + '</h1>' + orders[i].description + '</div>');
+	}
+}
+
+function sendRequest(url, method, model){
 	 $.ajax({
-	        type: "POST",
+	        type: method,
 	        url: url,
 	        data: model,
 	        success: function(res){
-	        	window.location.href = 'home.html'
+	        	switch(url){
+	        		case config.origin + config.prefix+ config.parentCategories:
+		        		outputCategories(res);
+	        		break;
+	        		case config.origin + config.prefix+ config.lawyers:
+		        		outputLawyers(res);
+	        		break;
+	        		case config.origin + config.prefix+ config.orders + currentPage:
+		        		outputOrders(res.orders);
+	        		break;
+	        	}
 	        },
 	        error: function(err){
 	        	console.log(err);
