@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <script src="./angular.min.js"></script>
-    <script src="./script.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.js"></script>
+    <!-- modules -->
+    <script src="./app.module.js"></script>
+    <script src="./modules/authorization/authorization.module.js"></script>
+    <!-- modules -->
+
+    <!-- routing -->
+    <script src="./app.routing.js"></script>
+    <!-- routing -->
+
+    <!-- services -->
+    <script src="./app.service.js"></script>
+    <script src="./modules/authorization/authorization.service.js"></script>
+    <!-- services -->
+    <!-- controllers -->
+    <script src="./main.controller.js"></script>
+    <!-- controllers -->
+
+
+
 </head>
 <body ng-app="app">
 <style>
@@ -13,28 +32,7 @@
     }
 </style>
 
-
-    <div ng-controller="mainController">
-        <input type="text" ng-model="newTodo.name">
-        <input type="text" ng-model="newTodo.description">
-        <button ng-click="createTodo()">Create</button>
-        {{newTodo}}
-        <hr>
-            <ul>
-                <li ng-class="{'finished':element.status}" ng-repeat="element in todos">
-                    <h5>{{element.name}}</h5>
-                    <p>{{element.description}}</p>
-                    {{element.status}}
-
-                   <button ng-click="finishTodo(this.element)">Finish</button>
-                    <button ng-click="removeTodo(this.element)">X</button>
-                </li>
-            </ul>
-    <!-- ___________________________________________ -->
-        <button ng-click="getUsers()">GET USER</button>
-
-    </div>
-
+<ng-view></ng-view>
 
 </body>
 </html>
