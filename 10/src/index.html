@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+
+    <!-- modules -->
+    <script src="./app.module.js"></script>
+    <script src="./modules/authorization/authorization.module.js"></script>
+    <!-- modules -->
+
+    <!-- routing -->
+    <script src="./app.routing.js"></script>
+    <!-- routing -->
+
+    <!-- services -->
+    <script src="./app.service.js"></script>
+    <script src="./modules/authorization/authorization.service.js"></script>
+    <!-- services -->
+    <!-- controllers -->
+    <script src="./main.controller.js"></script>
+    <!-- controllers -->
+
+
+
+</head>
+<body ng-app="app">
+<style>
+    .finished{
+        background-color: green;
+    }
+</style>
+<a href="#!/">Main</a>
+<a href="#!/sign-in">Sign In</a>
+<ng-view>
+
+</ng-view>
+
+</body>
+</html>
