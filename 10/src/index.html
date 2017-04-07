@@ -11,6 +11,10 @@
     <script src="./modules/authorization/authorization.module.js"></script>
     <!-- modules -->
 
+    <!-- configs -->
+    <script src="./app.config.js"></script>
+    <!-- configs -->
+
     <!-- routing -->
     <script src="./app.routing.js"></script>
     <!-- routing -->
@@ -21,19 +25,17 @@
     <!-- services -->
     <!-- controllers -->
     <script src="./main.controller.js"></script>
+    <script src="./modules/authorization/signIn/signIn.controller.js"></script>
     <!-- controllers -->
 
 
 
 </head>
 <body ng-app="app">
-<style>
-    .finished{
-        background-color: green;
-    }
-</style>
-<a href="#!/">Main</a>
-<a href="#!/sign-in">Sign In</a>
+<div>
+    <a href="/">Main</a>
+    <a href="#/sign-in">Sign In</a>
+</div>
 <ng-view>
 
 </ng-view>
