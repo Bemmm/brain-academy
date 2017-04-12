@@ -3,5 +3,8 @@ angular.module('app')
 	base: 'http://31.131.22.106',
 	prefix: '/api',
 	// _____________ROUTES_____________
-	login: '/login'
+	login: '/login',
+	profile: '/id',
+	getOrder: '/order-info/id'
+
 });

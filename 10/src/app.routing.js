@@ -7,7 +7,15 @@ $locationProvider.hashPrefix('');
         controller: 'mainController'
     })
     .when("/sign-in", {
-        templateUrl : "./modules/authorization/signIn/signIn.html",
+        templateUrl : "./views/authorization/signIn/signIn.html",
         controller: 'signInController'
+    })
+    .when("/orders/:id", {
+        templateUrl : "./views/orders/order-item/order-item.html",
+        controller: 'orderItemController'
+    })
+    .when("/profile/:id", {
+        templateUrl : "./views/profile/profile.html",
+        controller: 'profileController'
     })
 });
