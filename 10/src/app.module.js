@@ -1,6 +1,6 @@
 // создание модуля, внимание на пустой масив.
 angular.module('app', [
-	'ngRoute',
+	'ui.router',
 	'authorizationModule',
 	'ordersModule',
 	'profileModule'

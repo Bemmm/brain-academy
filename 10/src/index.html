@@ -13,12 +13,12 @@
 </head>
 <body ng-app="app">
 <div>
-    <a href="/">Main</a>
-    <a href="#/sign-in">Sign In</a>
+    <div ui-sref="/">Main</div>
+    <div ui-sref="order.answers({id: '58b8feb03334c46d3bbd6a3c'})">Order</div>
 </div>
-<ng-view>
+<ui-view>
 
-</ng-view>
+</ui-view>
 
 </body>
 </html>
